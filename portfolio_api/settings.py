@@ -1,20 +1,25 @@
 import os
+import environ
 from pathlib import Path
 from decouple import config
 from dj_database_url import parse as dburl
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=dc-fhf)v*!yexq6zv^^h^_-x9$wf^0=a4i0&hgdgs39mus%$z'
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -70,10 +75,8 @@ WSGI_APPLICATION = 'portfolio_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
-
 DATABASES = {
-    "default": config("DATABASE_URL", default=default_dburl, cast=dburl),
+    "default": config("DATABASE_URL", default=env("default_dburl"), cast=dburl),
 }
 
 

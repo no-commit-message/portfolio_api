@@ -22,7 +22,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = [
-    "portfolio-api-drf-d6a306e8536f.herokuapp.com/",
+    "portfolio-api-drf-d6a306e8536f.herokuapp.com",
     "localhost",
 ]
 

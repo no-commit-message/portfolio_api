@@ -1,0 +1,8 @@
+# environment
+venv/
+
+# cachefiles
+__pycache__/
+
+# database
+db.sqlite3

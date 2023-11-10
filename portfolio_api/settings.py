@@ -21,7 +21,8 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = env("DEBUG")
-DEBUG = os.environ["DEBUG"]
+# DEBUG = os.environ["DEBUG"]
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "portfolio-api-drf-d6a306e8536f.herokuapp.com",

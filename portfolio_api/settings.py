@@ -3,9 +3,7 @@ import environ
 from pathlib import Path
 from decouple import config
 from dj_database_url import parse as dburl
-import django_on_heroku
 
-django_on_heroku.settings(locals())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +21,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = env("DEBUG")
-DEBUG = os.environ['DEBUG']
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "portfolio-api-drf-d6a306e8536f.herokuapp.com",

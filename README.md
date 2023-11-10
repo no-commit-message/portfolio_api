@@ -7,7 +7,7 @@
 APIエンドポイント: https://portfolio-api-drf-d6a306e8536f.herokuapp.com/api/
 
 ## 使用技術
-DjangoRestframeworkを用いてAPIを実装し、Herokuにデプロイしました。
+DjangoRestframeworkを用いてAPIを実装し、Herokuにデプロイしました。  
 RDBMSはPostgresqlを使用しています。
 
 ## フロントエンド

@@ -16,10 +16,12 @@ env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+# SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
+DEBUG = os.environ["DEBUG"]
 
 ALLOWED_HOSTS = [
     "portfolio-api-drf-d6a306e8536f.herokuapp.com",
@@ -78,8 +80,11 @@ WSGI_APPLICATION = 'portfolio_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": config("DATABASE_URL", default=env("default_dburl"), cast=dburl),
+# }
 DATABASES = {
-    "default": config("DATABASE_URL", default=env("default_dburl"), cast=dburl),
+    "default": config("DATABASE_URL", default=os.environ["default_dburl"], cast=dburl),
 }
 
 
